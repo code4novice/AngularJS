@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CIG</title>
+
+<!-- Bootstrap -->
+ <script src="angular.js"></script>
+ <script src="paymentController.js"></script>
+
+
+
+
+
+
+</head>
+<body ng-app="myApp">
+<form action="initiatePayment" method="post">
+<div class="container"> 
+  <!-- Static navbar -->
+  <nav class="navbar navbar-default marginT10">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" data-aria-expanded="false" data-aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="#">LOGO</a> </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">MY ACCOUNT</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">HAVE QUESTIONS?</a></li>
+      </ul>
+    </div>
+    <!--/.nav-collapse --> 
+  </nav>
+  <div class="middle">
+    <div class="page-header marginT0"><h1>Payments Detail</h1></div>
+    <div class="row">
+      <div class="col-md-12">Please review your plan selection and click "Apply" to start your application. </div>
+    </div>
+    <div class="row marginT20">
+      <div class="col-md-9">
+        <table class="table table-format table-bordered"  data-ng-app="app">
+          <thead>
+            <tr>
+              <th></th>
+              <th width="50%">Plan Name</th>
+              <th colspan="2">Premium</th>
+            </tr>
+          </thead>
+          <tbody data-ng-controller="paymentController">
+            <tr data-ng-repeat="x in data">
+              <td><strong><a href="#">{{x.planName}}</a></strong></td>
+              <td><big><a href="#">{{x.planPrice}}</a></big></td>
+              <td class="text-right"><button class="btn btn-primary" type="button" onClick="window.location.href='payment.html';">Make Payment</button></td>
+            </tr>
+           
+          </tbody>
+         
+        </table>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+<!-- /container -->
+</form>
+</body>
+</html>
